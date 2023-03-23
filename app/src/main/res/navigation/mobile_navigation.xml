@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_match">
+
+    <fragment
+        android:id="@+id/navigation_match"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_homeitemFragment"
+            app:destination="@id/homeitemFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.example.myapplication.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/chat" >
+        <action
+            android:id="@+id/action_navigation_chat_to_chattingFragment"
+            app:destination="@id/chattingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_inf"
+        android:name="com.example.myapplication.ui.info.InfoFragment"
+        android:label="@string/title_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.example.myapplication.ui.chat.ChattingFragment"
+        android:label="ChattingFragment" />
+    <fragment
+        android:id="@+id/homeitemFragment"
+        android:name="com.example.myapplication.ui.home.HomeitemFragment"
+        android:label="HomeitemFragment" >
+        <action
+            android:id="@+id/action_homeitemFragment_to_navigation_home"
+            app:destination="@id/navigation_match" />
+    </fragment>
+</navigation>
