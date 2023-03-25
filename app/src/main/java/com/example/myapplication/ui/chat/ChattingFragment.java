@@ -51,7 +51,6 @@ public class ChattingFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager( getActivity() );
         crecyclerView.setLayoutManager( layoutManager );
         crecyclerView.setAdapter( chattingAdapter );
-        crecyclerView.addItemDecoration(new DividerItemDecoration(root.getContext(), 1));
 
         return root;
     }
