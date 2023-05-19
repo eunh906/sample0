@@ -28,14 +28,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     private ArrayList<Chat> data;
 
     public class ChatViewHolder extends RecyclerView.ViewHolder{
-        public TextView name, message, match;
-        public ImageView image;
+        public TextView name, message;
+        public ImageView image, match;
 
         public ChatViewHolder(View view) {
             super( view );
             name = view.findViewById( R.id.textView3 );
             message = view.findViewById( R.id.textView4 );
-            match = view.findViewById( R.id.textView6 );
+            match = view.findViewById( R.id.ImageView6 );
             image = view.findViewById( R.id.imageView4 );
             itemView.setOnClickListener( new View.OnClickListener() {
                 @Override
@@ -65,7 +65,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatAdapter.ChatViewHolder holder, int position){
+    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position){
         holder.name.setText(data.get( position ).getName());
         holder.message.setText( data.get( position ).getMessage() );
 

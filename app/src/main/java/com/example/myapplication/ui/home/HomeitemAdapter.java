@@ -21,11 +21,6 @@ public class HomeitemAdapter extends RecyclerView.Adapter<HomeitemAdapter.Homeit
 
         public HomeitemViewHolder(View view) {
             super( view );
-            name = view.findViewById( R.id.charityname );
-            text = view.findViewById( R.id.content1 );
-            title = view.findViewById( R.id.title1 );
-            date = view.findViewById( R.id.date );
-
         }
     }
     public HomeitemAdapter(ArrayList<Homeitem> homeitemdata){
@@ -46,7 +41,7 @@ public class HomeitemAdapter extends RecyclerView.Adapter<HomeitemAdapter.Homeit
         holder.text.setText( homeitemdata.get( position ).getText());
         holder.title.setText( homeitemdata.get(position).getTitle());
         holder.date.setText( homeitemdata.get(position).getDate());
-      }
+    }
 
     @Override
     public int getItemCount(){

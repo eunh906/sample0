@@ -4,40 +4,76 @@ import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavControlle
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.ui.start.Certificate;
+import com.example.myapplication.ui.start.Loading;
+import com.example.myapplication.ui.start.Login;
 
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    Button loginbutton;
+    Button personalbutton, companybutton, startbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 
-        loginbutton = findViewById( R.id.login );
+        Intent intent = new Intent(this, Loading.class);
+        startActivity(intent);
 
-        loginbutton.setOnClickListener( new View.OnClickListener() {
+
+        personalbutton = findViewById(R.id.btn_personal);
+        companybutton = findViewById(R.id.btn_company);
+        startbutton = findViewById(R.id.btn_start);
+
+        personalbutton.setOnClickListener( new View.OnClickListener() {
             @Override
-            public void onClick(View view)  {
-                Intent intent = new Intent(getApplicationContext(), HomeMainActivity.class);
-                startActivity(intent);}
-        } );
+            public void onClick(View view) {
+                if(personalbutton.isSelected()) {
+                    personalbutton.setSelected(false);
+                }
+                else {
+                    personalbutton.setSelected(true);
+                    companybutton.setSelected(false);
+                }
+            }
+        });
+
+        companybutton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(companybutton.isSelected()) {
+                    companybutton.setSelected(false);
+                }
+                else {
+                    companybutton.setSelected(true);
+                    personalbutton.setSelected(false);
+                }
+            }
+        });
+
+        startbutton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(personalbutton.isSelected()) {
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    startActivity(intent);
+                }
+                else if(companybutton.isSelected()) {
+                    Intent intent = new Intent(getApplicationContext(), Certificate.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "개인/기관 버튼을 선택해주세요.",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        }));
     }
 }

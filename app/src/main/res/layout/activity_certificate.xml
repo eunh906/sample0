@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="17dp"
+                android:src="@drawable/app_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="180dp"
+                android:text="당신의 나눔을 매칭해보세요"
+                android:textSize="15sp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="간편로그인"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/et_certificate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="5dp"
+            android:hint="사업자증록번호(10자) 입력해주세요"
+            android:fontFamily="@font/suit_extrabold"
+            android:textColorHint="#C6C6C6"
+            android:textSize="16sp"
+            android:background="@drawable/et_custom"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:text="개인정보처리방침 동의서"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="3dp"
+            android:padding="5dp"
+            android:text="개인정보 어쩌구"
+            android:textSize="13sp"
+            android:background="@drawable/txtview_custom"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="동의"
+                android:fontFamily="@font/suit_extrabold"
+                android:textSize="11sp"
+                android:textColor="#5A5A5A"/>
+
+            <CheckBox
+                android:id="@+id/cb_disagree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="비동의"
+                android:fontFamily="@font/suit_extrabold"
+                android:textSize="11sp"
+                android:textColor="#5A5A5A"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_certificate_ok"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_basic"
+            android:fontFamily="@font/suit_extrabold"
+            android:text="확인"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

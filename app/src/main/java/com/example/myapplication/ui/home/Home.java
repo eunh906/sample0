@@ -1,5 +1,8 @@
 package com.example.myapplication.ui.home;
 
+import lombok.Data;
+
+@Data
 public class Home {
     public String getTitle() {return title;}
     public void setTitle(String title) {

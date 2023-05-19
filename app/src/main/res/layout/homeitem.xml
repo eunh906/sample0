@@ -15,44 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/black"
-        app:strokeWidth="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp">
-
-            <TextView
-                android:id="@+id/chattext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="chattext"
-                app:layout_constraintBottom_toBottomOf="@+id/title1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/title1" />
-
-            <TextView
-                android:id="@+id/title1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="title1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/matchtext"
-                app:layout_constraintStart_toEndOf="@+id/chattext"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/matchtext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="매칭상태"
-                app:layout_constraintBottom_toBottomOf="@+id/title1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/title1" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        app:strokeWidth="4dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
@@ -63,35 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5"
         app:strokeColor="@color/black"
-        app:strokeWidth="3dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp">
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="날짜"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/charityname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="작성자"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        app:strokeWidth="3dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -107,48 +42,97 @@
         app:strokeColor="@color/black"
         app:strokeWidth="3dp">
 
-        <ImageView
-            android:id="@+id/imageview1"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:srcCompat="@drawable/baseline_wallpaper_24" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sliderViewPager"
+            android:layout_width="390dp"
+            android:layout_height="260dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutIndicators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/sliderViewPager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:strokeColor="@color/black"
-        app:strokeWidth="3dp">
+        app:layout_constraintVertical_bias="0.0">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_profile"
+            android:layout_width="70dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:src="@drawable/default_image"
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="143dp"/>
+
 
         <TextView
-            android:id="@+id/content1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="공고 내용" />
-    </androidx.cardview.widget.CardView>
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="닉네임" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:text="목록"
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:text="채팅보내기"
+            android:textSize="8dp" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#966c56"
+            android:text="매칭 중"
+            android:textSize="8dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B9A2A2"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="395dp"
+        android:layout_height="360dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView5"
+        app:layout_constraintVertical_bias="1.0">
 
+        <TextView
+            android:layout_width="395dp"
+            android:layout_height="340dp"
+
+            android:text="공고내용" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

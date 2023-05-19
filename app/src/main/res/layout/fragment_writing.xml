@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/LL_all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/line_i"
+            android:src="@drawable/wallpaper" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/line_t"
+            android:gravity="center"
+            android:text="0/10"
+            android:textColor="#966C56"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#B9A2A2" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:text="분류"
+            android:textSize="20dp"
+            android:textColor="#966C56"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/classification"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_ha"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
+                android:state_selected="false"
+                android:background="@drawable/btn_select"
+                android:text="가전제품"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dn"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
+                android:state_selected="false"
+                android:background="@drawable/btn_select"
+                android:text="생활용품"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_clothes"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
+                android:state_selected="false"
+                android:background="@drawable/btn_select"
+                android:text="의류"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_goods"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp"
+                android:state_selected="false"
+                android:background="@drawable/btn_select"
+                android:text="잡화"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_book"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                android:state_selected="false"
+                android:background="@drawable/btn_select"
+                android:text="책"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        .
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#B9A2A2" />
+
+        <EditText
+            android:id="@+id/titletext"
+            android:layout_width="88dp"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="제목"
+            android:textColor="#966C56"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#B9A2A2" />
+
+
+        <EditText
+            android:id="@+id/contenttext"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_margin="2dp"
+            android:hint="주의사항(글 작성공간)
+                         \n중고물품 거래 불가 제품 (중고물품 기부가 불가 한 곳도 있습니다.)
+                         \n▶가전제품 - 새 제품 기부가능, 사용불가한 제품은 거래 불가.
+                         \n▶옷 - 깨끗한 헌옷 , 새옷 가능, 구멍나거나 입을 수 없는 제품 거래 불가.
+                         \n▶생활용품 - 유통기한이 넉넉한(2주이상) 제품 가능, 유제품 등 기간이 짧은 식품(2~3일 남은 제품) 거래 불가.
+                         \n▶잡화 - 사용가능한 제품, 깨끗한 인형 가능, 사용불가한 잡화류는 거래 불가.
+                         \n▶책-  헌 책, 새책 , 새 문제집 가능, 찢어진 헌책 불가, 풀다만 문제집 불가."
+            android:textColorHint="#966C56"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#B9A2A2" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:text="소득공제"
+            android:textSize="20dp"
+            android:textColor="#966C56"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/check"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbox_yes"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#966C56"
+                android:textStyle="bold"
+                android:text="예" />
+
+            <CheckBox
+                android:id="@+id/cbox_no"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#966C56"
+                android:textStyle="bold"
+                android:text="아니오" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#B9A2A2" />
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

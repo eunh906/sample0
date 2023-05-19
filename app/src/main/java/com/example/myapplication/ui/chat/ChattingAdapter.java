@@ -23,8 +23,8 @@ public class ChattingAdapter extends RecyclerView.Adapter<ChattingAdapter.Chatti
 
         public ChattingViewHolder(View view) {
             super( view );
-            name = view.findViewById( R.id.ntext_other );
-            message = view.findViewById( R.id.mtext );
+            name = view.findViewById( R.id.textView5 );
+            message = view.findViewById( R.id.textView4 );
             userimage = view.findViewById( R.id.imageView_o );
         }
     }
@@ -41,8 +41,8 @@ public class ChattingAdapter extends RecyclerView.Adapter<ChattingAdapter.Chatti
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChattingAdapter.ChattingViewHolder holder, int position){
-        holder.name.setText(chatdata.get( position ).getName());
+    public void onBindViewHolder(@NonNull ChattingViewHolder holder, int position){
+        holder.name.setText( chatdata.get( position ).getName() );
         holder.message.setText( chatdata.get( position ).getMessage() );
         holder.userimage.setImageResource( R.drawable.baseline_person_outline_24 );
       }
